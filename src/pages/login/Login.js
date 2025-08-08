@@ -64,7 +64,7 @@ function Login(props) {
   // local
   let [isLoading, setIsLoading] = useState(false);
   let [error, setError] = useState(null);
-  let [activeTabId, setActiveTabId] = useState(+tab ?? 0);
+  let [activeTabId, setActiveTabId] = useState(tab ? +tab : 0);
   let [nameValue, setNameValue] = useState('');
   let [loginValue, setLoginValue] = useState('admin@flatlogic.com');
   let [passwordValue, setPasswordValue] = useState('password');
