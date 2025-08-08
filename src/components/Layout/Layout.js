@@ -83,10 +83,10 @@ const UsersTablePage = lazy(() => import('../../pages/CRUD/Users/table/UsersTabl
 
 // Loading component
 const LoadingFallback = () => (
-  <Box 
-    display="flex" 
-    justifyContent="center" 
-    alignItems="center" 
+  <Box
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
     minHeight="200px"
   >
     <CircularProgress />
@@ -117,7 +117,7 @@ function Layout(props) {
   return (
     <div className={classes.root}>
       <Header history={props.history} />
-      <Sidebar structure={structure}/>
+      <Sidebar structure={structure} />
       <div
         className={classnames(classes.content, {
           [classes.contentShift]: layoutState.isSidebarOpened,
@@ -169,7 +169,7 @@ function Layout(props) {
             <Route path="/app/maps/google" component={MapsGoogle} />
             <Route path="/app/maps/vector" component={VectorMaps} />
 
-            <Route exact path="/app/extra" render={() => <Redirect to="/app/extra/timeline" />}/>
+            <Route exact path="/app/extra" render={() => <Redirect to="/app/extra/timeline" />} />
             <Route path="/app/extra/timeline" component={Timeline} />
             <Route path="/app/extra/search" component={Search} />
             <Route path="/app/extra/gallery" component={Gallery} />
@@ -191,9 +191,9 @@ function Layout(props) {
                 <CreateProduct />
               </ProductsProvider>
             </Route>
-            <Route path="/app/ecommerce/product/:id" component={Product}/>
+            <Route path="/app/ecommerce/product/:id" component={Product} />
             <Route path="/app/ecommerce/product" component={Product} />
-            <Route path="/app/ecommerce/gridproducts" component={ProductsGrid}/>
+            <Route path="/app/ecommerce/gridproducts" component={ProductsGrid} />
 
             <Route path={'/app/users'} exact component={UsersTablePage} />
             <Route path={'/app/user/new'} exact component={UsersFormPage} />

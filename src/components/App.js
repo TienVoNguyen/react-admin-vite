@@ -20,10 +20,10 @@ import { getHistory } from '../index';
 
 // Loading component
 const LoadingFallback = () => (
-  <Box 
-    display="flex" 
-    justifyContent="center" 
-    alignItems="center" 
+  <Box
+    display="flex"
+    justifyContent="center"
+    alignItems="center"
     minHeight="100vh"
   >
     <CircularProgress size={60} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import jwt from 'jsonwebtoken';
+import { jwtDecode } from 'jwt-decode';
 
 import { mockUser } from './mock';
 
@@ -57,7 +57,7 @@ function UserProvider({ children }) {
       const token = localStorage.getItem('token');
       if (config.isBackend && token) {
         const date = new Date().getTime() / 1000;
-        const data = jwt.decode(token);
+        const data = jwtDecode(token);
         if (!data) return false;
         return date < data.exp;
       } else if (token) {
@@ -109,12 +109,12 @@ function loginUser(
   setError,
   social = '',
 ) {
-  console.log('🔐 Login attempt started:', { 
-    login, 
+  console.log('🔐 Login attempt started:', {
+    login,
     isBackend: config.isBackend,
     mode: config.isBackend ? 'Backend API' : 'Mock Mode'
   });
-  
+
   setError(false);
   setIsLoading(true);
   // We check if app runs with backend mode
@@ -197,7 +197,7 @@ export function receiveToken(token, dispatch) {
 
   // We check if app runs with backend mode
   if (config.isBackend) {
-    user = jwt.decode(token).user;
+    user = jwtDecode(token).user;
     delete user.id;
   } else {
     user = {

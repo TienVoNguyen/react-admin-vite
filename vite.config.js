@@ -85,6 +85,7 @@ export default defineConfig({
       vm: 'vm-browserify',
       process: 'process/browser',
       buffer: 'buffer',
+      util: 'util',
     },
   },
   css: {
@@ -146,7 +147,7 @@ export default defineConfig({
             if (id.includes('react-router')) {
               return 'react-router';
             }
-            
+
             // Material-UI - split into smaller chunks
             if (id.includes('@mui/material') || id.includes('@mui/system')) {
               return 'mui-core';
@@ -251,7 +252,7 @@ export default defineConfig({
               const pageName = id.split('/src/pages/')[1].split('/')[0];
               return `pages-${pageName}`;
             }
-            
+
             // Split components by type
             if (id.includes('/src/components/')) {
               const componentDir = id.split('/src/components/')[1].split('/')[0];
