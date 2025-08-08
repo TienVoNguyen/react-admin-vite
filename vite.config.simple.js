@@ -51,17 +51,6 @@ export default defineConfig(({ command, mode }) => {
       target: 'esnext',
     },
 
-    optimizeDeps: {
-      esbuildOptions: {
-        loader: {
-          '.js': 'jsx',
-        },
-        define: {
-          global: 'globalThis',
-        },
-      },
-    },
-
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
