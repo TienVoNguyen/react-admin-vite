@@ -3,6 +3,7 @@
   "description": "React Material Admin Full",
   "version": "2.4.1",
   "private": true,
+  "type": "module",
   "homepage": "./",
   "scripts": {
     "dev": "vite",
